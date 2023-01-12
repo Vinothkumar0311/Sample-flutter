@@ -1,4 +1,4 @@
-import 'package:elearning/theme/box_icons_icons.dart';
+import 'package:interviewo/theme/box_icons_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' as material;
 

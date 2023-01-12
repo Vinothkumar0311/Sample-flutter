@@ -1,21 +1,37 @@
-import 'package:elearning/theme/box_icons_icons.dart';
+import 'package:interviewo/theme/box_icons_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Menu extends StatelessWidget {
+class Menu extends StatefulWidget {
   final Animation<Offset> slideAnimation;
   final Animation<double> menuAnimation;
   final int selectedIndex;
   final Function onMenuItemClicked;
   final onMenuTap;
+  Menu({
+    Key key,
+    this.onMenuTap,
+    this.slideAnimation,
+    this.menuAnimation,
+    this.selectedIndex,
+    this.onMenuItemClicked,
+  }) : super(key: key);
+  @override
+  _MenuState createState() => _MenuState();
+}
 
-  const Menu(
-      {Key key,
-      this.onMenuTap,
-      this.slideAnimation,
-      this.menuAnimation,
-      this.selectedIndex,
-      this.onMenuItemClicked})
-      : super(key: key);
+class _MenuState extends State<Menu> {
+  var photoUrl;
+
+  void getData() async {
+    final SharedPreferences _pref = await SharedPreferences.getInstance();
+    photoUrl = _pref.getString('googleimage');
+  }
+
+  @override
+  void initState() {
+    getData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +55,7 @@ class Menu extends StatelessWidget {
             height: 135,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/images/navwave.png"),
-                  fit: BoxFit.fitWidth),
+                  image: NetworkImage(photoUrl), fit: BoxFit.fitWidth),
             ),
           ),
         ),
@@ -53,13 +68,13 @@ class Menu extends StatelessWidget {
                   Icons.close,
                   color: Colors.white,
                 ),
-                onPressed: onMenuTap,
+                onPressed: widget.onMenuTap,
               ),
             )),
         SlideTransition(
-          position: slideAnimation,
+          position: widget.slideAnimation,
           child: ScaleTransition(
-            scale: menuAnimation,
+            scale: widget.menuAnimation,
             child: Padding(
               padding: const EdgeInsets.only(left: 20.0, top: 30),
               child: Align(
@@ -76,7 +91,7 @@ class Menu extends StatelessWidget {
                           backgroundImage: AssetImage('assets/images/user.png'),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 16.0),
+                          padding: const EdgeInsets.only(left: 16.0, top: 15),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             crossAxisAlignment: CrossAxisAlignment.start,

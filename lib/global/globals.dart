@@ -1,4 +1,4 @@
-import 'package:elearning/auth/google_auth.dart';
+import 'package:interviewo/auth/google_auth.dart';
 
 var gAuth = GoogleAuth();
 

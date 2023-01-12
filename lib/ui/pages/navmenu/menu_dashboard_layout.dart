@@ -1,7 +1,7 @@
-import 'package:elearning/theme/config.dart' as config;
-import 'package:elearning/ui/pages/home.dart';
+import 'package:interviewo/theme/config.dart' as config;
+import 'package:interviewo/ui/pages/home.dart';
 import 'package:flutter/material.dart';
-import 'package:elearning/ui/pages/navmenu/dashboard.dart';
+import 'package:interviewo/ui/pages/navmenu/dashboard.dart';
 
 import 'menu.dart';
 

@@ -1,5 +1,5 @@
-import 'package:elearning/theme/box_icons_icons.dart';
-import 'package:elearning/ui/widgets/card.dart';
+import 'package:interviewo/theme/box_icons_icons.dart';
+import 'package:interviewo/ui/widgets/card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';

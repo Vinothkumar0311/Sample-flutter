@@ -1,7 +1,7 @@
-import 'package:elearning/theme/config.dart' as config;
-import 'package:elearning/ui/widgets/sectionHeader.dart';
-import 'package:elearning/ui/widgets/topBar.dart';
-import 'package:elearning/ui/widgets/videoCard.dart';
+import 'package:interviewo/theme/config.dart' as config;
+import 'package:interviewo/ui/widgets/sectionHeader.dart';
+import 'package:interviewo/ui/widgets/topBar.dart';
+import 'package:interviewo/ui/widgets/videoCard.dart';
 import 'package:flutter/cupertino.dart';
 
 class VideosPage extends StatelessWidget {

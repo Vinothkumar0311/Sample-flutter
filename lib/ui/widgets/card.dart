@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'package:elearning/theme/config.dart';
+import 'package:interviewo/theme/config.dart';
 import 'package:flutter/material.dart' as material;
 
 class CardWidget extends StatelessWidget {

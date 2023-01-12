@@ -1,5 +1,5 @@
-import 'package:elearning/theme/box_icons_icons.dart';
-import 'package:elearning/ui/pages/navmenu/menu_dashboard_layout.dart';
+import 'package:interviewo/theme/box_icons_icons.dart';
+import 'package:interviewo/ui/pages/navmenu/menu_dashboard_layout.dart';
 import 'package:flutter/cupertino.dart';
 
 class Onboarding extends StatefulWidget {

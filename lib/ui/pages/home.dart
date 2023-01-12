@@ -1,13 +1,13 @@
 import 'dart:ui';
-import 'package:elearning/ui/widgets/overlay.dart';
-import 'package:elearning/theme/box_icons_icons.dart';
-import 'package:elearning/theme/config.dart';
-import 'package:elearning/ui/pages/leaderboard.dart';
-import 'package:elearning/ui/pages/planner.dart';
-import 'package:elearning/ui/pages/videos.dart';
-import 'package:elearning/ui/widgets/sectionHeader.dart';
-import 'package:elearning/ui/widgets/topBar.dart';
-import 'package:elearning/ui/widgets/videoCard.dart';
+import 'package:interviewo/ui/widgets/overlay.dart';
+import 'package:interviewo/theme/box_icons_icons.dart';
+import 'package:interviewo/theme/config.dart';
+import 'package:interviewo/ui/pages/leaderboard.dart';
+import 'package:interviewo/ui/pages/planner.dart';
+import 'package:interviewo/ui/pages/videos.dart';
+import 'package:interviewo/ui/widgets/sectionHeader.dart';
+import 'package:interviewo/ui/widgets/topBar.dart';
+import 'package:interviewo/ui/widgets/videoCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart' as material;
 
@@ -48,17 +48,17 @@ class _HomeState extends State<Home> {
             items: [
               BottomNavigationBarItem(
                   icon: Icon(BoxIcons.bx_home_circle),
-                  title: tabNo == 0 ? Text("Home") : Container()),
+                  label: tabNo == 0 ? "Home" : ""),
               BottomNavigationBarItem(
                   icon: Icon(BoxIcons.bx_calendar),
-                  title: tabNo == 1 ? Text("Planner") : Container()),
+                  label: tabNo == 1 ? "Planner" : ""),
               BottomNavigationBarItem(icon: Container()),
               BottomNavigationBarItem(
                   icon: Icon(BoxIcons.bxs_videos),
-                  title: tabNo == 3 ? Text("Videos") : Container()),
+                  label: tabNo == 3 ? "Videos" : ""),
               BottomNavigationBarItem(
                   icon: Icon(BoxIcons.bx_stats),
-                  title: tabNo == 4 ? Text("Leaderboard") : Container()),
+                  label: tabNo == 4 ? "Leaderboard" : ""),
             ],
           ),
           tabBuilder: (context, index) => (index == 0)
