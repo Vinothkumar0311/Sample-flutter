@@ -8,8 +8,8 @@ import 'package:flutter/material.dart' as material;
 class VideoCard extends material.StatelessWidget {
   final bool long;
   const VideoCard({
-    required this.long,
-    material.Key? key,
+    this.long,
+    material.Key key,
   }) : super(key: key);
 
   @override

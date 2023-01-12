@@ -6,10 +6,10 @@ import 'package:flutter/services.dart';
 
 class TopBar extends StatefulWidget {
   const TopBar({
-    Key? key,
-    required this.controller,
-    required this.expanded,
-    required this.onMenuTap,
+    Key key,
+    this.controller,
+    this.expanded,
+    this.onMenuTap,
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -84,7 +84,7 @@ class _TopBarState extends State<TopBar> {
               controller: widget.controller,
               expands: false,
               inputFormatters: [
-                BlacklistingTextInputFormatter.singleLineFormatter
+                FilteringTextInputFormatter.singleLineFormatter
               ],
               keyboardType: TextInputType.text,
               suffix: Padding(
@@ -146,7 +146,9 @@ class _TopBarState extends State<TopBar> {
                                     ? "Maths"
                                     : index == 1
                                         ? "Physics"
-                                        : index == 2 ? "Chemistry" : "Biology")
+                                        : index == 2
+                                            ? "Chemistry"
+                                            : "Biology")
                               ],
                             ),
                           ),

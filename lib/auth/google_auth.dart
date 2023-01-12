@@ -11,9 +11,9 @@ class GoogleAuth {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
 
-  String? name;
-  String? email;
-  String? imageUrl;
+  String name;
+  String email;
+  String imageUrl;
   String errorMsg = "";
   bool isLoggedIn = false;
   bool isLoading = false;
@@ -33,12 +33,12 @@ class GoogleAuth {
 
     final UserCredential authResult =
         await _auth.signInWithCredential(credential);
-    final User? user = authResult.user!;
-    assert(user?.email != null);
-    assert(user?.displayName != null);
-    assert(user?.photoURL != null);
-    name = user?.displayName;
-    email = user?.email;
+    final User user = authResult.user;
+    assert(user.email != null);
+    assert(user.displayName != null);
+    assert(user.photoURL != null);
+    name = user.displayName;
+    email = user.email;
     if (user != null) {
       final QuerySnapshot result = await FirebaseFirestore.instance
           .collection('users')
@@ -54,8 +54,8 @@ class GoogleAuth {
           'premium': false,
         });
         await main.prefs.setString('id', user.uid);
-        await main.prefs.setString('name', user.displayName!);
-        await main.prefs.setString('email', user.email!);
+        await main.prefs.setString('name', user.displayName);
+        await main.prefs.setString('email', user.email);
         await main.prefs.setString('logged', "true");
         await main.prefs.setBool('premium', false);
       } else {
@@ -76,7 +76,7 @@ class GoogleAuth {
       assert(!user.isAnonymous);
       assert(await user.getIdToken() != null);
     }
-    final User currentUser = _auth.currentUser!;
+    final User currentUser = _auth.currentUser;
     assert(user?.uid == currentUser.uid);
     analytics.logLogin();
     return 'signInWithGoogle succeeded: $user';
