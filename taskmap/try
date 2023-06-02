@@ -1,0 +1,8 @@
+// localDB.taskInput.addAll({
+//         {
+//           "input1": inputFieldOne.text,
+//           "input2": inputFieldTwo.text,
+//           "input3": inputFieldThree.text,
+//           "input4": inputFieldFour.text,
+//         },
+//       });

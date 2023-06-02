@@ -1,0 +1,5 @@
+Local storage tips:
+If you have a huge amount of structured data, go for SQLite.
+If you want to store just some boolean or integer, go for Shared Preferences.
+If you want to store private or classified data, go for Secure Storage
+If you have a huge amount of data or Dart classes and don't want to worry about the structure much, go for Hive.
